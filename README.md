@@ -1,3 +1,3 @@
-# Chatbob
+# Syntactic Sugar
 
 Under construction...
