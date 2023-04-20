@@ -1,0 +1,18 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library")
+
+rust_library(
+    name = "chatbob_lib",
+    srcs = glob(["backend/src/*.rs"]),
+    deps = [
+        # TODO
+    ],
+)
+
+rust_binary(
+    name = "chatbob",
+    srcs = ["backend/main.rs"],
+    deps = [
+        ":chatbob_lib",
+        "//cargo:tokio",
+    ],
+)

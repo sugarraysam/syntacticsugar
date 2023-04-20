@@ -1,11 +1,16 @@
 .SHELLFLAGS=-euo pipefail -c
 SHELL := /bin/bash
 
-TARGETS := build clean
+TARGETS := raze help
 
-build:
-	@bazel build //...
+deps:
+	@cargo raze
 
 clean:
 	@bazel clean
-	@cargo clean --manifest-path=backend/Cargo.toml
+
+help:
+	@echo "Available targets:"
+	@echo "  deps: update dependencies"
+	@echo "  clean: clean bazel cache"
+	@echo "  help: print this message"
