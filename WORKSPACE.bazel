@@ -20,6 +20,11 @@ rules_rust_dependencies()
 
 rust_register_toolchains(edition = "2021")
 
+# Load dependencies for rust-analyzer and `rust-project.json`
+load("@rules_rust//tools/rust_analyzer:deps.bzl", "rust_analyzer_dependencies")
+
+rust_analyzer_dependencies()
+
 # Fetch cargo dependencies with cargo-raze
 load("//cargo:crates.bzl", "raze_fetch_remote_crates")
 

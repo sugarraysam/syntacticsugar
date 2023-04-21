@@ -1,18 +1,18 @@
 load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library")
 
 rust_library(
-    name = "chatbob_lib",
-    srcs = glob(["backend/src/*.rs"]),
+    name = "buybacks_lib",
+    srcs = glob(["src/**/*.rs"]),
     deps = [
         # TODO
     ],
 )
 
 rust_binary(
-    name = "chatbob",
-    srcs = ["backend/main.rs"],
+    name = "producer",
+    srcs = ["bin/producer.rs"],
     deps = [
-        ":chatbob_lib",
+        ":buybacks_lib",
         "//cargo:tokio",
     ],
 )

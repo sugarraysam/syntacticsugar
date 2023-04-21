@@ -1,0 +1,5 @@
+# Config syntax
+# https://github.com/bazelbuild/bazelisk#bazeliskrc-configuration-file
+
+# Set to fixed version in production
+USE_BAZEL_VERSION=latest

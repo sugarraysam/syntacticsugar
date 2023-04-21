@@ -3,13 +3,13 @@
 ## `.bazelrc` is a Bazel configuration file.
 ## https://bazel.build/docs/best-practices#bazelrc-file
 #
-# Enable rustfmt
-build:rustfmt --aspects=@rules_rust//rust:defs.bzl%rustfmt_aspect
-build:rustfmt --output_groups=+rustfmt_checks
+# Always warn for rustfmt errors and clippy
+build --aspects=@rules_rust//rust:defs.bzl%rustfmt_aspect
+build --output_groups=+rustfmt_checks
 
 # Enable clippy
-build:clippy --aspects=@rules_rust//rust:defs.bzl%rust_clippy_aspect
-build:clippy --output_groups=+clippy_checks
+build --aspects=@rules_rust//rust:defs.bzl%rust_clippy_aspect
+build --output_groups=+clippy_checks
 
 # Custom user flags
 try-import %workspace%/user.bazelrc
